@@ -41,6 +41,8 @@ public class JavaScriptParser {
         // 这里的结果虽然是个object, 但是和你输入的这个表达式有直接的关系
         // 如果你的表达式是个逻辑表达式, 那么这里的object类型一定是布尔值
         // 如果你的表达式是个计算表达式, 那么这里的object类型一定是双精度小数值
+        // 当然, 如果你不想精度丢失的话, 你可以使用toFixed函数, 将结果转换为数字字符串, 然后通过BigDecimal初始化
+        // 在DictDynamicaleRunner中有关于toFixed函数的例子
         return compiledScript.eval(bindings);
     }
 }
